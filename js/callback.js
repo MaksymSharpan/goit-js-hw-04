@@ -68,15 +68,59 @@
 
 // действие как аргумент
 
-const printValue = function (value) {
+// const printValue = function (value) {
+//   console.log(value);
+// };
+// const prettyPrint = function (value) {
+//   console.log('Logging value: ', value)
+// };
+// const repeat = function (n, action) {
+//   for (let i = 0; i < n; i += 1){
+//     action(i);
+//   }
+// }
+// repeat(5, printValue);
+
+
+const printMessage = function (message) {
+  console.log(message);
+}
+const higherOrderFunction = function (callback) {
+  const string = 'HOCs are awesome';
+  callback(string)
+}
+higherOrderFunction(printMessage);
+
+
+// const repeatLog = function(n) {
+//   for (let i = 0; i < n; i += 1) {
+//     console.log(i);
+//   }
+// };
+// repeatLog(4);
+
+const printValue = function(value) {
   console.log(value);
 };
-const prettyPrint = function (value) {
-  console.log('Logging value: ', value)
+
+const prettyPrint = function(value) {
+  console.log('Logging value: ', value);
 };
-const repeat = function (n, action) {
-  for (let i = 0; i < n; i += 1){
+
+const repeat = function(n, action) {
+  for (let i = 0; i < n; i += 1) {
     action(i);
   }
-}
-repeat(5, printValue);
+};
+
+// Передаем printValue как callback-функцию
+repeat(3, printValue);
+// 0
+// 1
+// 2
+
+// Передаем prettyPrint как callback-функцию
+repeat(3, prettyPrint);
+// Logging value: 0
+// Logging value: 1
+// Logging value: 2
